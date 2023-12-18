@@ -1,22 +1,18 @@
 import "./App.css";
-import styles from "./styles.module.css";
-
-interface ButtonProps {
-  mode?: "primary" | "secondary";
-}
-
-const Button = ({ mode }: ButtonProps) => {
-  const primaryClass = mode
-    ? styles[`btn${mode.charAt(0).toUpperCase()}${mode.slice(1)}`]
-    : "";
-  const classes = primaryClass ? `${styles.btn} ${primaryClass}` : styles.btn;
-  return <button className={classes}>Woo</button>;
-};
+import * as Components from "./components";
 
 function App() {
   return (
     <div className="App">
-      <Button mode="primary" />
+      {Object.entries(Components).map(([name, Component]) => (
+        <section key={name}>
+          <h1>{name}</h1>
+          <hr />
+          <div className="component-wrapper">
+            <Component />
+          </div>
+        </section>
+      ))}
     </div>
   );
 }
