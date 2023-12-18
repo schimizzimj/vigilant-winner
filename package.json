@@ -1,0 +1,24 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "monorepo of random components i decide to build in various frontend frameworks",
+  "main": "index.js",
+  "author": "marcus schimizzi",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "workspace-react",
+    "workspace-vue",
+    "workspace-svelte",
+    "workspace-css"
+  ],
+  "scripts": {
+    "start:react": "yarn workspace workspace-react dev",
+    "start:vue": "yarn workspace workspace-vue dev",
+    "start:svelte": "yarn workspace workspace-svelte dev",
+    "sync:react": "yarn workspace workspace-react syncStyles",
+    "sync:vue": "yarn workspace workspace-vue syncStyles",
+    "sync:svelte": "yarn workspace workspace-svelte syncStyles",
+    "sync:all": "yarn sync:react && yarn sync:vue && yarn sync:svelte"
+  }
+}
