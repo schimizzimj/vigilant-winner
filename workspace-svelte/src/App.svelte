@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button from './Button.svelte';
-  import StoryExample from './StoryExample.svelte';
+  import StoryExample from './Scrollytelling/StoryExample.svelte';
 </script>
 
 <main>
