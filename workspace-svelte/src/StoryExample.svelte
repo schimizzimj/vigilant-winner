@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
     import Scrolly from "./Scrolly.svelte";
     import { tweened } from "svelte/motion";
     let number = tweened(0);
 
-    let currentStep;
+    let currentStep: number;
 
     $: if (currentStep == 0) {
         number.set(100);
